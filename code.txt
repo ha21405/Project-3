@@ -1,0 +1,263 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# ESSEX POLICE DEPARTMENT
+
+df_essex = pd.read_csv("essex.csv")
+
+gender = df_essex["Gender"]
+race = df_essex["Officer-defined ethnicity"]
+age = df_essex["Age range"]
+
+df_essex.groupby(["Age range", "Gender"])[["Gender"]].count()
+
+count_male = gender.value_counts().Male
+count_male
+
+count_female = gender.value_counts().Female
+count_female
+
+total_gender = count_male + count_female
+total_gender
+
+nu1 = ["Male","Female"]
+
+a = plt.bar(nu1,[count_male,count_female],color=['blue','pink'])
+
+race = df_essex["Officer-defined ethnicity"]
+df_essex.groupby(['Officer-defined ethnicity','Gender'])[["Gender"]].count()
+
+count_asian = race.value_counts().Asian
+
+count_black = race.value_counts().Black
+
+count_mixed = race.value_counts().Mixed
+
+count_other = race.value_counts().Other
+
+count_white = race.value_counts().White
+
+nu2 = ["Asian","Black","Mixed","Other","White"]
+
+plt.bar(nu2,[count_asian,count_black,count_mixed,count_other,count_white],color=['brown', 'black', 'cyan', 'blue', 'yellow'],edgecolor='black')
+
+df_essex.groupby(['Officer-defined ethnicity' , 'Legislation'])[['Officer-defined ethnicity']].count()
+
+# LONDON POLICE DEPARTMENT
+
+df_london = pd.read_csv("london.csv")
+
+gender = df_london["Gender"]
+race = df_london["Officer-defined ethnicity"]
+age = df_london["Age range"]
+
+df_london.groupby(["Age range", "Gender"])[["Gender"]].count()
+
+count_male = gender.value_counts().Male
+count_male
+
+count_female = gender.value_counts().Female
+count_female
+
+total_gender = count_male + count_female
+total_gender
+
+nu1 = ["Male","Female"]
+
+b = plt.bar(nu1,[count_male,count_female],color=['blue','pink'])
+
+race = df_london["Officer-defined ethnicity"]
+df_london.groupby(['Officer-defined ethnicity','Gender'])[["Gender"]].count()
+
+count_asian = race.value_counts().Asian
+
+count_black = race.value_counts().Black
+
+count_other = race.value_counts().Other
+
+count_white = race.value_counts().White
+
+nu2 = ["Asian","Black","Other","White"]
+
+plt.bar(nu2,[count_asian,count_black,count_other,count_white],color=['brown', 'black', 'blue', 'yellow'],edgecolor='black')
+
+df_london.groupby(['Officer-defined ethnicity' , 'Legislation'])[['Officer-defined ethnicity']].count()
+
+# DURHAM Police department
+
+df_durham = pd.read_csv("durham.csv")
+
+gender = df_durham["Gender"]
+race = df_durham["Officer-defined ethnicity"]
+age = df_durham["Age range"]
+
+
+df_durham.groupby(["Age range", "Gender"])[["Gender"]].count()
+
+count_male = gender.value_counts().Male
+count_male
+
+count_female = gender.value_counts().Female
+count_female
+
+total_gender = count_male + count_female
+total_gender
+
+nu1 = ["Male","Female"]
+
+plt.bar(nu1,[count_male,count_female],color=['blue','pink'])
+
+race = df_durham["Officer-defined ethnicity"]
+df_durham.groupby(['Officer-defined ethnicity','Gender'])[["Gender"]].count()
+
+count_asian = race.value_counts().Asian
+
+count_black = race.value_counts().Black
+
+count_other = race.value_counts().Other
+
+count_white = race.value_counts().White
+
+nu2 = ["Asian","Black","Other","White"]
+
+plt.bar(nu2,[count_asian,count_black,count_other,count_white],color=['brown', 'black',  'blue', 'yellow'],edgecolor='black')
+
+df_durham.groupby(['Officer-defined ethnicity' , 'Legislation'])[['Officer-defined ethnicity']].count()
+
+# Devon and Cornwall Police deparrtment
+
+df_dc = pd.read_csv("devon-and-cornwall.csv")
+
+gender = df_dc["Gender"]
+race = df_dc["Officer-defined ethnicity"]
+age = df_dc["Age range"]
+
+df_dc.groupby(["Age range", "Gender"])[["Gender"]].count()
+
+count_male = gender.value_counts().Male
+count_male
+
+count_female = gender.value_counts().Female
+count_female
+
+total_gender = count_male + count_female
+total_gender
+
+nu1 = ["Male","Female"]
+
+plt.bar(nu1,[count_male,count_female],color=['blue','pink'])
+
+race = df_dc["Officer-defined ethnicity"]
+df_dc.groupby(['Officer-defined ethnicity','Gender'])[["Gender"]].count()
+
+count_asian = race.value_counts().Asian
+
+count_black = race.value_counts().Black
+
+count_other = race.value_counts().Other
+
+count_white = race.value_counts().White
+
+nu2 = ["Asian","Black","Other","White"]
+
+plt.bar(nu2,[count_asian,count_black,count_other,count_white],color=['brown', 'black',  'blue', 'yellow'],edgecolor='black')
+
+df_dc.groupby(['Officer-defined ethnicity' , 'Legislation'])[['Officer-defined ethnicity']].count()
+
+# Cumbria Police department
+
+df_cumbria = pd.read_csv("cumbria.csv")
+
+gender = df_cumbria["Gender"]
+race = df_cumbria["Officer-defined ethnicity"]
+age = df_cumbria["Age range"]
+
+df_cumbria.groupby(["Age range", "Gender"])[["Gender"]].count()
+
+count_male = gender.value_counts().Male
+count_male
+
+count_female = gender.value_counts().Female
+count_female
+
+total_gender = count_male + count_female
+total_gender
+
+
+nu1 = ["Male","Female"]
+
+plt.bar(nu1,[count_male,count_female],color=['blue','pink'])
+
+race = df_cumbria["Officer-defined ethnicity"]
+df_cumbria.groupby(['Officer-defined ethnicity','Gender'])[["Gender"]].count()
+
+count_asian = race.value_counts().Asian
+
+count_black = race.value_counts().Black
+
+count_other = race.value_counts().Other
+
+count_white = race.value_counts().White
+
+nu2 = ["Asian","Black","Other","White"]
+
+plt.bar(nu2,[count_asian,count_black,count_other,count_white],color=['brown', 'black',  'blue', 'yellow'],edgecolor='black')
+
+df_durham.groupby(['Officer-defined ethnicity' , 'Legislation'])[['Officer-defined ethnicity']].count()
+
+# CAMBRIDGESHIRE Police department
+
+df_cam = pd.read_csv("cambridgeshire.csv")
+
+gender = df_cam["Gender"]
+race = df_cam["Officer-defined ethnicity"]
+age = df_cam["Age range"]
+
+
+df_cam.groupby(["Age range", "Gender"])[["Gender"]].count()
+
+count_male = gender.value_counts().Male
+count_male
+
+
+count_female = gender.value_counts().Female
+count_female
+
+
+total_gender = count_male + count_female
+total_gender
+
+
+nu1 = ["Male","Female"]
+
+plt.bar(nu1,[count_male,count_female],color=['blue','pink'])
+
+race = df_cam["Officer-defined ethnicity"]
+df_cam.groupby(['Officer-defined ethnicity','Gender'])[["Gender"]].count()
+
+
+count_asian = race.value_counts().Asian
+
+count_black = race.value_counts().Black
+
+count_other = race.value_counts().Other
+
+count_white = race.value_counts().White
+
+nu2 = ["Asian","Black","Other","White"]
+
+plt.bar(nu2,[count_asian,count_black,count_other,count_white],color=['brown', 'black',  'blue', 'yellow'],edgecolor='black')
+
+df_cam.groupby(['Officer-defined ethnicity' , 'Legislation'])[['Officer-defined ethnicity']].count()
+
+
+
+
+
+
+
+
+
+
+
